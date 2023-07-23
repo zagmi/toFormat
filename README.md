@@ -1,4 +1,19 @@
-# To Format
+## To Format
+
+<div style="display: flex; justify-content: center;">
+
+  <img src="https://img.shields.io/pub/v/to_format?color=green">
+
+  <img src="https://img.shields.io/pub/points/to_format">
+
+  <img src="https://img.shields.io/pub/popularity/to_format?color=green">
+
+  <img src="https://img.shields.io/badge/maintenance%20status-actively%20developed-brightgreen">
+
+  <img src="https://img.shields.io/badge/coverage-92%25-orange">
+
+</div>
+<br/>
 
 Adds a `toFormat` instance method to `num`.
 
