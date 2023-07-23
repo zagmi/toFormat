@@ -2,20 +2,20 @@ library to_format;
 
 import 'dart:math';
 
-class ToFormat {
+class _ToFormat {
   static Map<String, dynamic> defaultFormat = {
     'decimalSeparator': '.',
     'groupSeparator': ',',
     'groupSize': 3,
     'secondaryGroupSize': 0,
-    'fractionGroupSeparator': null,
+    'fractionGroupSeparator': '.',
     'fractionGroupSize': 0,
   };
 
   num _value;
   late Map<String, dynamic> format;
 
-  ToFormat(this._value, {Map<String, dynamic>? format})
+  _ToFormat(this._value, {Map<String, dynamic>? format})
       : format = {...defaultFormat, ...(format ?? {})};
 
   num get value => _value;
@@ -80,3 +80,10 @@ class ToFormat {
     return fracp.isNotEmpty ? '$intp$dsep$fracp' : intp;
   }
 }
+
+extension NumToFormat on num {
+  String toFormat({int? dp, int? rm, Map<String, dynamic>? fmt}) {
+    return _ToFormat(this, format: fmt).toFormat(dp: dp, rm: rm);
+  }
+}
+
